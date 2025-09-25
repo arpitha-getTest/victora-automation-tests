@@ -9,7 +9,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 
 
-@allure.feature("Login Functionality")
 class TestVictora:
 
     @classmethod
@@ -28,7 +27,6 @@ class TestVictora:
     def teardown_class(cls):
         cls.driver.quit()
 
-    @allure.step("Open login page and wait for header")
     def test_url(self):
         self.driver.get("https://victoraauto-asterisksc-uat-landing.ey.com/auth/login")
         WebDriverWait(self.driver, 10).until(
@@ -39,7 +37,6 @@ class TestVictora:
         )
         time.sleep(1)
 
-    @allure.step("Enter valid username and password")
     def test_enter_valid_username_password(self):
         # Optionally call test_url if needed
         # self.test_url()
